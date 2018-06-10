@@ -15,6 +15,7 @@ link_ignore_list =
 link_ignore_regex = clbin.com
 
 [commit]
+enabled = False
 bears = GitCommitBear
 shortlog_trailing_period = False
 shortlog_regex = ([^:]*|[^:]+[^ ]: [A-Z0-9*].*)
@@ -40,8 +41,15 @@ use_spaces = True
 [html]
 bears = HTMLLintBear
 files = **.html
-htmllint_ignore = optional_tag, protocol, indentation,  concerns_separation, capitalization
 ignore = vendor/**, resources/vendors/**, _site/**
+
+[css]
+bears = CSSLintBear
+files = **.css
+
+[duplicate]
+bears = DuplicateFileBear
+files = **.yml, **.html, **.md, **.js, **.css, **.json
 
 [yml]
 bears = YAMLLintBear
